@@ -31,11 +31,16 @@ namespace Calculator
     //　➐　税込み価格を求める
     total = subtotal + tax;
     
-    //　➑　税抜き価格、消費税額、税込み価格をstring型に
-    //　キャストして各ラベルに出力する
-    label6.Text = Convert.ToString(subtotal);
-    label7.Text = Convert.ToString(tax);
-    label18.Text = Convert.ToString(total);
+
+    //　➑　税抜き価格、消費税額、税込み価格をstring型にキャストして各ラベルに出力する
+      //　label6.Text = Convert.ToString(subtotal);
+      //　label7.Text = Convert.ToString(tax);
+      //　label18.Text = Convert.ToString(total);
+          
+    //　➑-B　書式設定して各ラベルに出力する
+      label6.Text = String.Format("{0:0,000}円", subtotal); 
+      label7.Text = String.Format("{0:0,000}円", tax);   
+      label18.Text = String.Format("{0:0,000}円", total); 
     }
   }
 }
